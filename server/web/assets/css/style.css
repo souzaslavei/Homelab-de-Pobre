@@ -1,0 +1,408 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+    radial-gradient(circle at top, #1e3a8a, #111827 45%);
+
+    color: white;
+
+    margin: 0;
+
+    padding: 25px;
+
+    min-height: 100vh;
+
+}
+
+
+
+.container {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+}
+
+
+
+header {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+
+}
+
+
+
+header h1 {
+
+    font-size: 36px;
+
+    margin: 0;
+
+}
+
+
+
+header h1 i {
+
+    margin-right: 10px;
+
+    color: #60a5fa;
+
+}
+
+
+
+.subtitle {
+
+    color: #cbd5e1;
+
+    font-size: 18px;
+
+    margin-top: 8px;
+
+}
+
+
+
+.card {
+
+    background: rgba(31,41,55,0.85);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.35);
+
+}
+
+
+
+.system-card h2 {
+
+    margin-top: 0;
+
+    font-size: 24px;
+
+}
+
+
+
+.system-card h2 i {
+
+    color:#22c55e;
+
+    margin-right:8px;
+
+}
+
+
+
+.services {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(230px,1fr));
+
+    gap:22px;
+
+    margin-top:25px;
+
+}
+
+
+
+.service-card {
+
+    background:
+    rgba(55,65,81,0.85);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    transition:0.3s;
+
+}
+
+
+
+.service-card:hover {
+
+    transform:translateY(-5px);
+
+}
+
+
+
+.service-card i {
+
+    font-size:42px;
+
+    color:#60a5fa;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.service-name {
+
+    font-size:21px;
+
+    font-weight:bold;
+
+}
+
+
+
+.online,
+.offline {
+
+    margin-top:12px;
+
+    font-weight:bold;
+
+}
+
+
+
+.online {
+
+    color:#22c55e;
+
+}
+
+
+
+.offline {
+
+    color:#ef4444;
+
+}
+
+
+
+.button {
+
+    display:inline-block;
+
+    margin-top:18px;
+
+    padding:11px 22px;
+
+    border-radius:12px;
+
+    background:#2563eb;
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:0.3s;
+
+}
+
+
+
+.button:hover {
+
+    background:#1d4ed8;
+
+}
+
+
+
+.info {
+
+    margin-top:30px;
+
+    padding-top:20px;
+
+    border-top:1px solid rgba(255,255,255,0.15);
+
+    color:#cbd5e1;
+
+}
+
+
+
+@media(max-width:600px){
+
+    body{
+
+        padding:15px;
+
+    }
+
+
+    header h1{
+
+        font-size:28px;
+
+    }
+
+
+    .card{
+
+        padding:20px;
+
+    }
+
+}
+
+
+/* HARDWARE CARDS */
+
+
+.hardware-grid {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+    margin-top:20px;
+
+}
+
+
+
+.hardware-card {
+
+    background:
+    rgba(55,65,81,0.85);
+
+    border-radius:18px;
+
+    padding:22px;
+
+}
+
+
+
+.hardware-card i {
+
+    font-size:30px;
+
+    color:#60a5fa;
+
+    margin-bottom:12px;
+
+}
+
+
+
+.hardware-title {
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+
+
+
+.hardware-value {
+
+    font-size:24px;
+
+    margin:10px 0;
+
+}
+
+
+
+.progress {
+
+    width:100%;
+
+    height:10px;
+
+    background:rgba(255,255,255,0.15);
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+
+
+.progress-bar {
+
+    height:100%;
+
+    background:#22c55e;
+
+    border-radius:10px;
+
+}
+
+
+
+.hardware-description {
+
+    color:#cbd5e1;
+
+    margin-top:10px;
+
+    font-size:14px;
+
+}
+
+
+
+.section-title {
+
+    margin-top:30px;
+
+    margin-bottom:15px;
+
+    font-size:22px;
+
+}
+
+<<<<<<< HEAD
+
+
+/* Controle de rede do Dashboard */
+
+.network-switch {
+
+    margin-top:25px;
+
+    margin-bottom:25px;
+
+    text-align:center;
+
+}
+
+
+.network-switch .button i {
+
+    margin-right:8px;
+
+}
+
+=======
+>>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1

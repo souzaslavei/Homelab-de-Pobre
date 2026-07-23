@@ -1,0 +1,25 @@
+# Logs
+*.log
+registros/
+
+# Estado dos serviços
+estado/
+
+# Backups locais
+backup/
+
+# Dados gerados pelos serviços
+dados/*
+
+# Configuração pessoal
+configuracoes/identidade.conf
+bot/config.sh
+
+# Arquivos temporários
+*.pid
+*.tmp
+*.sqlite
+*.db
+
+# Ambiente Android específico
+.env

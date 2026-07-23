@@ -1,0 +1,13 @@
+Homelab de Pobre
+
+<<<<<<< HEAD
+Versão: v4.0.1
+=======
+Versão: v4.0
+>>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
+
+Plataforma:
+Android + Termux
+
+Projeto:
+Servidor doméstico
