@@ -3,8 +3,6 @@
 SERVER="$HOME/server"
 LOG="$SERVER/registros/startup.log"
 
-# Ativa modo manutenção para o watchdog
-touch "$SERVER/estado/manutencao.flag"
 
 mkdir -p "$SERVER/registros"
 
@@ -79,6 +77,17 @@ transmission-remote --exit >> "$LOG" 2>&1
 sleep 5
 
 fi
+
+
+# Encerra watchdog para evitar múltiplas instâncias no próximo início
+
+echo "$(date) - Parando Watchdog" >> "$LOG"
+
+pkill -f "$SERVER/watchdog.sh"
+
+rm -f "$SERVER/estado/watchdog.lock"
+
+sleep 2
 
 
 # Remove todos os PID antigos

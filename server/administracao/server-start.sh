@@ -3,8 +3,6 @@
 SERVER="$HOME/server"
 LOG="$SERVER/registros/startup.log"
 
-# Desativa modo manutenção
-rm -f "$SERVER/estado/manutencao.flag"
 
 echo "$(date) - ===============================" >> "$LOG"
 echo "$(date) - Iniciando servidor manualmente" >> "$LOG"

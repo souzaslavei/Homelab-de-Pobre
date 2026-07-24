@@ -2,6 +2,19 @@
 
 SERVER="$HOME/server"
 
+# Impede múltiplas instâncias do watchdog
+LOCKFILE="$SERVER/estado/watchdog.lock"
+
+mkdir -p "$SERVER/estado"
+
+if [ -f "$LOCKFILE" ]; then
+    exit 0
+fi
+
+touch "$LOCKFILE"
+
+trap 'rm -f "$LOCKFILE"' EXIT
+
 source "$SERVER/bot/config.sh"
 source "$SERVER/bot/telegram.sh"
 
@@ -124,11 +137,6 @@ do
         continue
     fi
 
-    if [ -f "$SERVER/estado/manutencao.flag" ]; then
-        echo "$(date) - Servidor em manutenção, ignorando verificação" >> "$LOG"
-        sleep 300
-        continue
-    fi
 
 
     echo "$(date) - Verificando serviços" >> "$LOG"
