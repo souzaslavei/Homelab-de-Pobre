@@ -21,11 +21,7 @@ send_message()
 
 send_message_chat()
 {
-<<<<<<< HEAD
-    CHAT_ID=""
-=======
     CHAT_ID="$1"
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
     MESSAGE="$2"
 
     curl -s \

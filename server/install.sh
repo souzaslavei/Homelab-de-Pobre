@@ -96,6 +96,8 @@ echo "Instalador Principal"
 echo
 
 BASE="$HOME/server"
+
+VERSAO=$(grep "Versão:" "$BASE/VERSAO.txt" | awk "{print $2}")
 SCRIPTS="$BASE/instalacao/scripts"
 
 run_step() {
@@ -252,7 +254,7 @@ echo "$(date) - Instalação concluída com sucesso" >> "$BASE/registros/instala
 
 cat > "$BASE/configuracoes/instalacao.conf" <<EOF
 INSTALADO_EM="$(date)"
-VERSAO="v3.1"
+VERSAO="$VERSAO"
 EOF
 
 
@@ -310,5 +312,5 @@ echo
 echo "=========================================="
 echo "Instalação finalizada."
 echo "Homelab de Pobre pronto para uso."
-echo "Versão instalada: v3.1"
+echo "Versão instalada: $VERSAO"
 echo "=========================================="

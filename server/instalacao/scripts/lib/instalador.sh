@@ -96,7 +96,6 @@ mostrar_info_servico() {
 obter_ip_local() {
 
     IP=$(ifconfig 2>/dev/null | awk '
-<<<<<<< HEAD
 
         /^wlan0:/ {wifi=1; next}
 
@@ -106,12 +105,6 @@ obter_ip_local() {
         }
 
     ')
-=======
-        /inet / && $2 != "127.0.0.1" {
-            print $2
-            exit
-        }')
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
 
     [ -z "$IP" ] && IP="127.0.0.1"
 
@@ -120,7 +113,6 @@ obter_ip_local() {
 }
 
 
-<<<<<<< HEAD
 obter_ip_tailscale() {
 
     IP=$(ifconfig 2>/dev/null | awk '
@@ -138,14 +130,11 @@ obter_ip_tailscale() {
 
 }
 
-=======
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
 
 obter_url_servico() {
 
     PORTA="$1"
 
-<<<<<<< HEAD
     echo "http://$(obter_ip_local):$PORTA"
 
 }
@@ -160,11 +149,6 @@ obter_url_servico_tailscale() {
     [ -z "$TS" ] && return
 
     echo "http://$TS:$PORTA"
-=======
-    IP=$(obter_ip_local)
-
-    echo "http://$IP:$PORTA"
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
 
 }
 

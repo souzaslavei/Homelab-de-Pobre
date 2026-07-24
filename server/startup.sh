@@ -6,6 +6,18 @@ source "$HOME/server/bot/config.sh"
 
 mkdir -p "$HOME/server/registros"
 
+mkdir -p "$HOME/server/estado"
+
+echo "$(date) - Limpando arquivos PID antigos" >> "$LOG"
+rm -f "$HOME/server/estado/"*.pid
+
+
+# Remove modo de manutenção caso exista
+if [ -f "$HOME/server/estado/manutencao.flag" ]; then
+    rm -f "$HOME/server/estado/manutencao.flag"
+    echo "$(date) - Modo manutenção removido" >> "$LOG"
+fi
+
 echo "$(date) - ===============================" >> "$LOG"
 echo "$(date) - Boot iniciado" >> "$LOG"
 

@@ -42,7 +42,13 @@ if pgrep -x transmission-daemon >/dev/null; then
 
     echo "$(date) - Transmission encontrado ativo (PID $PID)" >> "$LOG"
 
+    sleep 3
+
+PID=$(pgrep -f "transmission-daemon" | head -n1)
+
+if [ -n "$PID" ]; then
     echo "$PID" > "$PIDFILE"
+fi
 
     exit 0
 

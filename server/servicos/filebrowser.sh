@@ -29,8 +29,10 @@ nohup filebrowser \
 -r "$ROOT" \
 >> "$LOG" 2>&1 &
 
-PID=$!
+sleep 2
 
-echo "$PID" > "$PIDFILE"
+PID=$(pgrep -f "filebrowser --database" | head -n1)
+
+[ -n "$PID" ] && echo "$PID" > "$PIDFILE"
 
 echo "$(date) - File Browser iniciado com PID $PID" >> "$LOG"

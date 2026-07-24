@@ -42,16 +42,37 @@ fi
 
 
 if [ -f "$SERVER/estado/jellyfin.pid" ]; then
+
     PID=$(cat "$SERVER/estado/jellyfin.pid")
 
     if ps -p "$PID" >/dev/null; then
         echo "JELLYFIN=ONLINE"
         echo "JELLYFIN_PID=$PID"
+
+    else
+        PID=$(pgrep -x "jellyfin" | head -n1)
+
+        if [ -n "$PID" ]; then
+            echo "$PID" > "$SERVER/estado/jellyfin.pid"
+            echo "JELLYFIN=ONLINE"
+            echo "JELLYFIN_PID=$PID"
+        else
+            echo "JELLYFIN=OFFLINE"
+        fi
+    fi
+
+else
+
+    PID=$(pgrep -x "jellyfin" | head -n1)
+
+    if [ -n "$PID" ]; then
+        echo "$PID" > "$SERVER/estado/jellyfin.pid"
+        echo "JELLYFIN=ONLINE"
+        echo "JELLYFIN_PID=$PID"
     else
         echo "JELLYFIN=OFFLINE"
     fi
-else
-    echo "JELLYFIN=OFFLINE"
+
 fi
 
 

@@ -25,8 +25,10 @@ cd "$SERVER/web"
 
 nohup python app.py >> "$LOG" 2>&1 &
 
-PID=$!
+sleep 2
 
-echo "$PID" > "$PIDFILE"
+PID=$(pgrep -f "python app.py" | head -n1)
+
+[ -n "$PID" ] && echo "$PID" > "$PIDFILE"
 
 echo "$(date) - Dashboard Web iniciado com PID $PID" >> "$LOG"

@@ -239,7 +239,6 @@ Serviços acompanhados:
 
 ## /enderecos
 
-<<<<<<< HEAD
 Exibe os endereços de acesso dos serviços disponíveis no servidor.
 
 O comando verifica dinamicamente os endereços atuais configurados e apresenta as opções de acesso conforme a rede disponível.
@@ -248,18 +247,11 @@ Pode apresentar:
 
 - acesso pela Rede Local;
 - acesso pelo Tailscale;
-=======
-Exibe os endereços de acesso dos serviços disponíveis.
-
-Permite localizar rapidamente:
-
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
 - Dashboard Web;
 - File Browser;
 - Jellyfin;
 - outros serviços configurados.
 
-<<<<<<< HEAD
 Os endereços exibidos podem mudar conforme:
 
 - alteração do IP da rede local;
@@ -268,8 +260,6 @@ Os endereços exibidos podem mudar conforme:
 
 O objetivo do comando é fornecer os links atualizados para acesso remoto ao servidor sem depender de informações salvas anteriormente.
 
-=======
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
 ---
 
 ## /reiniciar
@@ -318,7 +308,6 @@ Utilize quando precisar consultar as funções disponíveis.
 
 ---
 
-<<<<<<< HEAD
 ## /ssh
 
 Exibe o comando completo necessário para conexão SSH com o servidor.
@@ -348,8 +337,6 @@ As informações apresentadas podem mudar conforme o estado atual da rede, IPs d
 
 ---
 
-=======
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
 # 8. Solução rápida de problemas
 
 Caso o servidor apresente problemas:

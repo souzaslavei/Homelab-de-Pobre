@@ -1,7 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
 SERVER="$HOME/server"
-
 LOG="$SERVER/registros/jellyfin.log"
 PIDFILE="$SERVER/estado/jellyfin.pid"
 
@@ -10,42 +9,28 @@ mkdir -p "$SERVER/estado"
 
 echo "$(date) - Verificando Jellyfin" >> "$LOG"
 
+if [ -f "$PIDFILE" ]; then
+    PID=$(cat "$PIDFILE")
 
-# Verifica resposta HTTP do Jellyfin
-if curl -s --max-time 5 http://127.0.0.1:8096 >/dev/null; then
-
-    PID=$(pgrep -x jellyfin)
-
-    if [ -n "$PID" ]; then
-        echo "$PID" > "$PIDFILE"
-        echo "$(date) - Jellyfin online PID $PID" >> "$LOG"
+    if kill -0 "$PID" 2>/dev/null; then
+        echo "$(date) - Jellyfin já está em execução (PID $PID)" >> "$LOG"
+        exit 0
     else
-        echo "$(date) - Jellyfin online (PID não identificado)" >> "$LOG"
+        rm -f "$PIDFILE"
     fi
-
-    exit 0
 fi
 
+echo "$(date) - Iniciando Jellyfin" >> "$LOG"
 
-echo "$(date) - Jellyfin offline, iniciando" >> "$LOG"
+nohup jellyfin >> "$LOG" 2>&1 &
 
+sleep 5
 
-nohup env DOTNET_ROOT=/data/data/com.termux/files/usr/lib/dotnet jellyfin >> "$LOG" 2>&1 &
+PID=$(pgrep -x "jellyfin" | head -n1)
 
-
-sleep 20
-
-
-if curl -s --max-time 5 http://127.0.0.1:8096 >/dev/null; then
-
-    PID=$(pgrep -x jellyfin)
-
+if [ -n "$PID" ]; then
     echo "$PID" > "$PIDFILE"
-
-    echo "$(date) - Jellyfin iniciado PID $PID" >> "$LOG"
-
+    echo "$(date) - Jellyfin iniciado com PID $PID" >> "$LOG"
 else
-
-    echo "$(date) - ERRO: Jellyfin não respondeu na porta 8096" >> "$LOG"
-
+    echo "$(date) - ERRO: Jellyfin não iniciou" >> "$LOG"
 fi

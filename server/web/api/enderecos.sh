@@ -2,7 +2,6 @@
 
 SERVER="$HOME/server"
 
-<<<<<<< HEAD
 
 "$SERVER/administracao/enderecos-servicos.sh" | awk '
 
@@ -72,31 +71,6 @@ SERVER="$HOME/server"
 
     }
 
-=======
-"$SERVER/administracao/enderecos-servicos.sh" | \
-awk '
-
-/File Browser/ {
-    getline
-    print "FILEBROWSER="$0
-}
-
-/Transmission/ {
-    getline
-    if ($0 ~ /^http/) {
-        print "TRANSMISSION="$0
-    }
-}
-
-/Jellyfin/ {
-    getline
-    print "JELLYFIN="$0
-}
-
-/Dashboard Web/ {
-    getline
-    print "DASHBOARD="$0
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
 }
 
 '

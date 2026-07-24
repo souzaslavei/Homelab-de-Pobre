@@ -2,25 +2,6 @@
 
 SERVER="$HOME/server"
 
-<<<<<<< HEAD
-LOCK="$SERVER/estado/watchdog.pid"
-
-mkdir -p "$SERVER/estado"
-
-if [ -f "$LOCK" ]; then
-
-    PID=$(cat "$LOCK")
-
-    if kill -0 "$PID" 2>/dev/null; then
-        exit 0
-    fi
-
-fi
-
-echo $$ > "$LOCK"
-
-=======
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
 source "$SERVER/bot/config.sh"
 source "$SERVER/bot/telegram.sh"
 

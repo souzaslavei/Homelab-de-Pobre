@@ -298,7 +298,6 @@ Entre suas funções estão:
 
 ---
 
-<<<<<<< HEAD
 ## Sistema de endereços dos serviços
 
 O servidor possui um sistema centralizado para geração dos endereços de acesso dos serviços.
@@ -323,8 +322,6 @@ O Dashboard possui controle visual para alternar entre os acessos da rede local 
 
 ---
 
-=======
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
 ## Tailscale
 
 O Tailscale permite acesso remoto externo através de uma rede privada segura.

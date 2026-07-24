@@ -12,14 +12,11 @@ process_command()
 
     case "$COMMAND" in
 
-<<<<<<< HEAD
 /ssh)
 send_message_chat "$CHAT_ID" "$(ssh_status)"
 ;;
 
 
-=======
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
         /iniciar|/start)
             send_message_chat "$CHAT_ID" "$(start_server)"
             ;;
@@ -69,10 +66,7 @@ send_message_chat "$CHAT_ID" "$(ssh_status)"
 /enderecos - Endereços dos serviços
 /reiniciar - Reiniciar servidor
 /parar - Parar servidor
-<<<<<<< HEAD
 /ssh - Mostrar comando de conexão SSH
-=======
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
 /sobre - Informações do servidor
 /ajuda - Ajuda"
             ;;

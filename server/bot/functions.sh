@@ -215,7 +215,6 @@ stop_server()
 
     echo "🔴 Servidor parado."
 }
-<<<<<<< HEAD
 
 
 
@@ -292,5 +291,3 @@ ssh_status(){
     echo -e "$MSG"
 
 }
-=======
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1

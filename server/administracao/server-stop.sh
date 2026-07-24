@@ -62,6 +62,13 @@ if pgrep -x jellyfin >/dev/null; then
     sleep 3
 fi
 
+# Segunda verificação: força encerramento se ainda existir
+if pgrep -x jellyfin >/dev/null; then
+    echo "$(date) - Jellyfin ainda ativo, forçando encerramento" >> "$LOG"
+    pkill -9 -x jellyfin
+    sleep 2
+fi
+
 
 if pgrep -f transmission-daemon >/dev/null; then
 
@@ -74,16 +81,9 @@ sleep 5
 fi
 
 
-<<<<<<< HEAD
+# Remove todos os PID antigos
+rm -f "$SERVER/estado/"*.pid
 
-echo "$(date) - Parando Watchdog" >> "$LOG"
-
-pkill -f "server/watchdog.sh"
-
-rm -f "$SERVER/estado/watchdog.pid"
-
-=======
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
 echo "$(date) - Servidor desligado" >> "$LOG"
 echo "$(date) - ===============================" >> "$LOG"
 

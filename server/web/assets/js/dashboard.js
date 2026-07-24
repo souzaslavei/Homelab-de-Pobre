@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 let modoRede = "LOCAL";
 
 
@@ -11,8 +10,6 @@ function alternarRede(){
 }
 
 
-=======
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
 fetch("/api/identidade")
 .then(response => response.json())
 .then(identity => {
@@ -28,11 +25,8 @@ fetch("/api/identidade")
 });
 
 
-<<<<<<< HEAD
 function atualizarDashboard(){
 
-=======
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
 Promise.all([
 fetch("/api/system").then(r => r.json()),
 fetch("/api/enderecos").then(r => r.json())
@@ -52,39 +46,26 @@ url:"#"
 name:"FileBrowser",
 icon:"fa-solid fa-folder",
 status:data.FILEBROWSER,
-<<<<<<< HEAD
 url: modoRede === "LOCAL" ? urls.LOCAL_FILEBROWSER : urls.TAILSCALE_FILEBROWSER
-=======
-url:urls.FILEBROWSER
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
 },
 
 {
 name:"Transmission",
 icon:"fa-solid fa-download",
 status:data.TRANSMISSION,
-<<<<<<< HEAD
 url: modoRede === "LOCAL" ? urls.LOCAL_TRANSMISSION : urls.TAILSCALE_TRANSMISSION
-=======
-url:urls.TRANSMISSION
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
 },
 
 {
 name:"Jellyfin",
 icon:"fa-solid fa-film",
 status:data.JELLYFIN,
-<<<<<<< HEAD
 url: modoRede === "LOCAL" ? urls.LOCAL_JELLYFIN : urls.TAILSCALE_JELLYFIN
-=======
-url:urls.JELLYFIN
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
 }
 
 ];
 
 
-<<<<<<< HEAD
 let html = `
 
 <div class="network-switch">
@@ -101,9 +82,6 @@ ${modoRede === "LOCAL" ? "Rede Local" : "Tailscale"}
 
 
 html += '<div class="services">';
-=======
-let html = '<div class="services">';
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
 
 
 services.forEach(service => {
@@ -295,11 +273,8 @@ document.getElementById("status").innerHTML =
 "Erro: " + error;
 
 });
-<<<<<<< HEAD
 
 }
 
 
 atualizarDashboard();
-=======
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1

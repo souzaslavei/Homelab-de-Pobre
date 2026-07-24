@@ -108,11 +108,7 @@ IDENTIFICACAO="$IDENTIFICACAO"
 MIDIA="$MIDIA"
 DOWNLOADS="$DOWNLOADS"
 
-<<<<<<< HEAD
-VERSAO="4.0.1"
-=======
-VERSAO="3.1"
->>>>>>> 8e05702de8ad78080ad86757441a6374ca1753a1
+VERSAO=$(grep "Versão:" "$BASE/VERSAO.txt" | awk "{print $2}")
 PLATAFORMA="Android + Termux"
 EOF_CONFIG
 

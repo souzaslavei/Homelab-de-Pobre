@@ -6,6 +6,10 @@ O objetivo desta documentação é registrar situações encontradas durante o d
 
 ---
 
+# Caso aconteça algum bug, a primeira tentativa de solucionar deve ser enviar /reiniciar no Bot do Telegram.
+
+---
+
 # Limitação no cálculo de uso da CPU
 
 Um dos problemas conhecidos do projeto é o cálculo de utilização da CPU.
