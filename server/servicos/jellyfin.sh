@@ -1,6 +1,11 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
 SERVER="$HOME/server"
+
+# Ambiente .NET necessário para Jellyfin no Termux
+export DOTNET_ROOT="/data/data/com.termux/files/usr/lib/dotnet"
+export PATH="$DOTNET_ROOT:$PATH"
+export DOTNET_BUNDLE_EXTRACT_BASE_DIR="$HOME/.cache/dotnet_bundle_extract"
 LOG="$SERVER/registros/jellyfin.log"
 PIDFILE="$SERVER/estado/jellyfin.pid"
 
